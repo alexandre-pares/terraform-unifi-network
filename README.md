@@ -14,25 +14,25 @@ Checkout the [examples](./examples) folder for detailed examples.
 This module catalogue tries to cover the Unifi endpoints as much as possible.
 
 | **Endpoint**     	| **Feature**                          	| **Support** 	|
-|------------------	|--------------------------------------	|:-----------:	|
-| Application Info 	| Get Application Info                 	|      ✅      	|
+|------------------	|--------------------------------------	|:-----------:  |
+| Application Info 	| Get Application Info                 	|      ✅       |
 | Sites            	| List Local Sites                     	|  ⚠️ Partial  	|
-| Unifi Devices    	| List Adopted Devices                 	|      ❌      	|
-| Unifi Devices    	| Adopt Devices                        	|      ❌      	|
-| Unifi Devices    	| Execute Port Action                  	|      ❌      	|
-| Unifi Devices    	| Execute Adopted Device Action        	|      ❌      	|
-| Unifi Devices    	| Get Adopted Device Details           	|      ✅      	|
-| Unifi Devices    	| Get Latest Adopted Device Statistics 	|      ✅      	|
-| Unifi Devices    	| List Devices Pending Adoption        	|      ❌      	|
-| Clients          	| Execute Client Action                	|      ❌      	|
-| Clients          	| List Connected Clients               	|      ❌      	|
-| Clients          	| Get Connected Client Details         	|      ❌      	|
-| Networks         	| Get Network Details                  	|      ❌      	|
-| Networks         	| Update Network                       	|      ❌      	|
-| Networks         	| Delete Network                       	|      ❌      	|
-| Networks         	| List Networks                        	|      ❌      	|
-| Networks         	| Create Network                       	|      ❌      	|
-| Networks         	| Get Network References               	|      ❌      	|
+| Unifi Devices    	| List Adopted Devices                 	|  ⚠️ Partial  	|
+| Unifi Devices    	| Adopt Devices                        	|      ❌       |
+| Unifi Devices    	| Execute Port Action                  	|      ❌       |
+| Unifi Devices    	| Execute Adopted Device Action        	|      ❌       |
+| Unifi Devices    	| Get Adopted Device Details           	|      ✅       |
+| Unifi Devices    	| Get Latest Adopted Device Statistics 	|      ✅       |
+| Unifi Devices    	| List Devices Pending Adoption        	|      ❌       |
+| Clients          	| Execute Client Action                	|      ❌       |
+| Clients          	| List Connected Clients               	|      ❌       |
+| Clients          	| Get Connected Client Details         	|      ❌       |
+| Networks         	| Get Network Details                  	|      ❌       |
+| Networks         	| Update Network                       	|      ❌       |
+| Networks         	| Delete Network                       	|      ❌       |
+| Networks         	| List Networks                        	|      ❌       |
+| Networks         	| Create Network                       	|      ❌       |
+| Networks         	| Get Network References               	|      ❌       |
 
 ## Common Issues
 
