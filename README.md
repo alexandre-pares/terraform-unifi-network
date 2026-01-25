@@ -51,10 +51,10 @@ This module catalogue tries to cover the Unifi endpoints as much as possible.
 ╵
 ```
 
-When using the local API endpoint your Unifi Console uses by default a self-signed certificate.
+This can happen when you are using the `local` API endpoint because your Unifi Console uses by default a self-signed certificate (`e.g. CN=unifi.local`).
 
 To fix this issue you can either:
-- Verify that your `magodo/restful` provider has the `tls_insecure_skip_verify` parameter set to `true` when using a local endpoint (See [`./examples/get_application_info/terraform.tf`](./examples/get_application_info/terraform.tf)).
+- Verify that your `magodo/restful` provider has the `tls_insecure_skip_verify` parameter set to `true` when using a local endpoint (See [`./examples/get_application_info/terraform.tf`](./examples/get_application_info/terraform.tf#L24))
 - Add a trusted certificate to your Unifi Console (Settings > Console Plane > Certificates > Add new)
 
 
