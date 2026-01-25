@@ -57,6 +57,16 @@ To fix this issue you can either:
 - Verify that your `magodo/restful` provider has the `tls_insecure_skip_verify` parameter set to `true` when using a local endpoint (See [`./examples/get_application_info/terraform.tf`](./examples/get_application_info/terraform.tf#L24))
 - Add a trusted certificate to your Unifi Console (Settings > Console Plane > Certificates > Add new)
 
+## Disclaimer
+
+This module is not an official module from Ubiquiti Inc.
+
+I only have access to limited Unifi hardware so not all endpoints can be implemented or tested.
+
+I'm learning Terraform and will try to improve the modules over time. (I'm looking over `terraform query` and `terraform test`).
+
+Contributions are welcome but any AI generated PR will be rejected.
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
