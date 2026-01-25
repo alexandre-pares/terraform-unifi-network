@@ -1,0 +1,39 @@
+name: Feature Request
+description: A new idea for this module (or submodules)?
+labels: ["feature-request"]
+
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for similar feature request and I haven't found a match.
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the feature request, including what you expected to happen.
+      placeholder: |
+        ## The Problem
+        Describe the problem you are trying to solve.
+
+        ## The proposed solution
+        Describe the ideal solution or feature.
+
+        ## Current workaround (if any)
+        Describe any current workarounds (or hack).
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional informations
+      description: Any relevant information you think would be useful.
+      placeholder: |
+        Extra informations, screenshots, references, etc.
+    validations:
+      required: false
