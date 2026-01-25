@@ -3,7 +3,9 @@
 Terraform Module for Unifi Network, compatible with Unifi Network API v10.1.68 and greater.
 
 This module (and sub-modules) are based on the official Unifi Documentation:
-https://unifi.ui.com/settings/api-docs
+
+- https://unifi.ui.com/settings/api-docs
+- https://192.168.1.1/unifi-api/network (Assuming 192.168.1.1 is your Unifi Console IP)
 
 ## Usage
 
@@ -65,7 +67,10 @@ I only have access to limited Unifi hardware so not all endpoints can be impleme
 
 I'm learning Terraform and will try to improve the modules over time. (I'm looking over `terraform query`, `terraform test` and maybe one time on a terraform provider).
 
-Contributions are welcome but any AI generated PR will be rejected.
+## Inspiration
+
+- [terraform-ibm-modules/common-dev-assets](https://github.com/terraform-ibm-modules/common-dev-assets/blob/main/module-assets/.pre-commit-config.yaml) for pre-commits
+- [Azure/terraform-azurerm-avm-template](https://github.com/Azure/terraform-azurerm-avm-template/blob/main/outputs.tf) for TF variables and outputs descriptions format
 
 
 <!-- BEGIN_TF_DOCS -->
