@@ -44,5 +44,5 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_sites"></a> [sites](#output\_sites) | ## Description<br/>  List of local sites managed by the Unifi Network Application.<br/><br/>  ## Learn more<br/>  https://developer.ui.com/network/v10.1.68/getsiteoverviewpage<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "offset"      = 0,<br/>    "limit"       = 0,<br/>    "count"       = 1,<br/>    "totalCount"  = 1,<br/>    "data"        = [<br/>      {<br/>        "id"                = "4c2d331d-6cdc-39d5-ae48-7457ff007b02",<br/>        "internalReference" = "default",<br/>        "name"              = "Default"<br/>      }<br/>    ]<br/>  }</pre> |
+| <a name="output_sites"></a> [sites](#output\_sites) | ## Description<br/><br/>  List of local sites managed by the Unifi Network Application.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getsiteoverviewpage<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "offset"      = 0,<br/>    "limit"       = 0,<br/>    "count"       = 1,<br/>    "totalCount"  = 1,<br/>    "data"        = [<br/>      {<br/>        "id"                = "4c2d331d-6cdc-39d5-ae48-7457ff007b02",<br/>        "internalReference" = "default",<br/>        "name"              = "Default"<br/>      }<br/>    ]<br/>  }</pre> |
 <!-- END_TF_DOCS -->

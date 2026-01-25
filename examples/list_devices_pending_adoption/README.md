@@ -1,6 +1,6 @@
-# Example: Get Adopted Device Details
+# Example: List Devices Pending Adoption
 
-Get the details for a specific adopted device of a specific site.
+List devices pending adoption for a Unifi Application.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -18,9 +18,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_adopted_device_details"></a> [adopted\_device\_details](#module\_adopted\_device\_details) | ../../modules/adopted_device_details | n/a |
-| <a name="module_adopted_devices"></a> [adopted\_devices](#module\_adopted\_devices) | ../../modules/adopted_devices | n/a |
-| <a name="module_sites"></a> [sites](#module\_sites) | ../../modules/sites | n/a |
+| <a name="module_pending_devices_adoption"></a> [pending\_devices\_adoption](#module\_pending\_devices\_adoption) | ../../modules/pending_devices | n/a |
 
 ## Resources
 
@@ -39,5 +37,5 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_adopted_device_details"></a> [adopted\_device\_details](#output\_adopted\_device\_details) | ## Description<br/><br/>  Details about an adopted device.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getadopteddevicedetails<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "id"                = "c94dadd5-4368-3273-bf77-d45d2e9e0cc1"<br/>    "macAddress"        = "d8:b3:70:ff:ff:ff"<br/>    "ipAddress"         = "192.168.1.10"<br/>    "name"              = "USW Flex 2.5G 5"<br/>    "model"             = "USW Flex 2.5G 5"<br/>    "supported"         = true<br/>    "state"             = "ONLINE"<br/>    "firmwareVersion"   = "2.1.8"<br/>    "firmwareUpdatable" = false<br/>    "adoptedAt"         = "2025-11-19T22:34:26Z"<br/>    "provisionedAt"     = "2025-12-22T12:55:26Z"<br/>    "configurationId"   = "1a2b3c4d5e6f"<br/>    "uplink"            = {<br/>      "deviceId" = "c06642ce-eff0-395d-b76e-451d2e4ff993"<br/>    },<br/>    "features"          = {<br/>      "switching"   = {},<br/>      "accessPoint" = {}<br/>    },<br/>    "interfaces"        = {<br/>      "ports" = [<br/>        {<br/>          "idx"           = 1,<br/>          "state"         = "UP",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>          "speedMbps"     = 2500<br/>        },<br/>        {<br/>          "idx"           = 2,<br/>          "state"         = "UP",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>          "speedMbps"     = 2500<br/>        },<br/>        {<br/>          "idx"           = 3,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>        },<br/>        {<br/>          "idx"           = 3,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        },<br/>        {<br/>          "idx"           = 4,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        },<br/>        {<br/>          "idx"           = 5,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        }<br/>      ]<br/>    }<br/>  }</pre> |
+| <a name="output_pending_devices_adoption"></a> [pending\_devices\_adoption](#output\_pending\_devices\_adoption) | ## Description<br/><br/>  List of devices pending adoption on an Unifi Network Application.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getpendingdevicepage<br/><br/>  ## Example<br/><br/>  ### 1 device pending adoption<pre>hcl<br/>  [<br/>    {<br/>      adoptionTargetSiteIds = [<br/>          "4c2d331d-6cdc-39d5-ae48-7457ff007b02",<br/>        ]<br/>      features              = [<br/>          "switching",<br/>        ]<br/>      firmwareUpdatable     = false<br/>      firmwareVersion       = "2.1.8"<br/>      ipAddress             = "192.168.1.10"<br/>      macAddress            = "84:78:48:ff:ff:ff"<br/>      model                 = "USW Flex 2.5G 5"<br/>      state                 = "PENDING_ADOPTION"<br/>      supported             = true<br/>    }<br/>  ]</pre>### No devices pending adoption<pre>hcl<br/>  []</pre> |
 <!-- END_TF_DOCS -->

@@ -1,12 +1,15 @@
 output "sites" {
   description = <<DESCRIPTION
   ## Description
+
   List of local sites managed by the Unifi Network Application.
 
   ## Learn more
+
   https://developer.ui.com/network/v10.1.68/getsiteoverviewpage
 
   ## Example
+
   ```hcl
   {
     "offset"      = 0,

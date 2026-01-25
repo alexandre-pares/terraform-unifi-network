@@ -9,6 +9,7 @@ output "adopted_device_statistics" {
   https://developer.ui.com/network/v10.1.68/getadopteddevicelateststatistics
 
   ## Example
+
   ```hcl
   {
     "uptimeSec"             = 5704058

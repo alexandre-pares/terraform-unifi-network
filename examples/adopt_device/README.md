@@ -1,6 +1,28 @@
-# Example: Get Adopted Device Details
+# Example: Adopt Device
 
-Get the details for a specific adopted device of a specific site.
+Adopt a pending device into a specified site using its MAC address.
+
+Note: THis example doesn't work.
+
+Using:
+- https://registry.terraform.io/providers/magodo/restful/latest/docs/actions/action
+- https://developer.hashicorp.com/terraform/language/invoke-actions#invoke-an-action-from-the-cli
+
+Error encountered:
+
+```bash
+terraform plan -invoke=action.restful_action.adopt_device
+╷
+│ Error: Too many command line arguments
+│
+│ To specify a working directory for the plan, use the global -chdir flag.
+╵
+╷
+│ Error: Invalid target "action"
+│
+│ Action specification must include an action type and name.
+╵
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -18,9 +40,8 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_adopted_device_details"></a> [adopted\_device\_details](#module\_adopted\_device\_details) | ../../modules/adopted_device_details | n/a |
-| <a name="module_adopted_devices"></a> [adopted\_devices](#module\_adopted\_devices) | ../../modules/adopted_devices | n/a |
-| <a name="module_sites"></a> [sites](#module\_sites) | ../../modules/sites | n/a |
+| <a name="module_adopt_device"></a> [adopt\_device](#module\_adopt\_device) | ../../modules/adopt_device | n/a |
+| <a name="module_pending_devices_adoption"></a> [pending\_devices\_adoption](#module\_pending\_devices\_adoption) | ../../modules/pending_devices | n/a |
 
 ## Resources
 
@@ -37,7 +58,5 @@ No resources.
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_adopted_device_details"></a> [adopted\_device\_details](#output\_adopted\_device\_details) | ## Description<br/><br/>  Details about an adopted device.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getadopteddevicedetails<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "id"                = "c94dadd5-4368-3273-bf77-d45d2e9e0cc1"<br/>    "macAddress"        = "d8:b3:70:ff:ff:ff"<br/>    "ipAddress"         = "192.168.1.10"<br/>    "name"              = "USW Flex 2.5G 5"<br/>    "model"             = "USW Flex 2.5G 5"<br/>    "supported"         = true<br/>    "state"             = "ONLINE"<br/>    "firmwareVersion"   = "2.1.8"<br/>    "firmwareUpdatable" = false<br/>    "adoptedAt"         = "2025-11-19T22:34:26Z"<br/>    "provisionedAt"     = "2025-12-22T12:55:26Z"<br/>    "configurationId"   = "1a2b3c4d5e6f"<br/>    "uplink"            = {<br/>      "deviceId" = "c06642ce-eff0-395d-b76e-451d2e4ff993"<br/>    },<br/>    "features"          = {<br/>      "switching"   = {},<br/>      "accessPoint" = {}<br/>    },<br/>    "interfaces"        = {<br/>      "ports" = [<br/>        {<br/>          "idx"           = 1,<br/>          "state"         = "UP",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>          "speedMbps"     = 2500<br/>        },<br/>        {<br/>          "idx"           = 2,<br/>          "state"         = "UP",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>          "speedMbps"     = 2500<br/>        },<br/>        {<br/>          "idx"           = 3,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500,<br/>        },<br/>        {<br/>          "idx"           = 3,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        },<br/>        {<br/>          "idx"           = 4,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        },<br/>        {<br/>          "idx"           = 5,<br/>          "state"         = "DOWN",<br/>          "connector"     = "RJ45",<br/>          "maxSpeedMbps"  = 2500<br/>        }<br/>      ]<br/>    }<br/>  }</pre> |
+No outputs.
 <!-- END_TF_DOCS -->

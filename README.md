@@ -14,11 +14,11 @@ Checkout the [examples](./examples) folder for detailed examples.
 This module catalogue tries to cover the Unifi endpoints as much as possible.
 
 | **Endpoint**     	| **Feature**                          	| **Support** 	|
-|------------------	|--------------------------------------	|:-----------:  |
+|------------------	|--------------------------------------	|:-------------:|
 | Application Info 	| Get Application Info                 	|      ✅       |
 | Sites            	| List Local Sites                     	|  ⚠️ Partial  	|
 | Unifi Devices    	| List Adopted Devices                 	|  ⚠️ Partial  	|
-| Unifi Devices    	| Adopt Devices                        	|      ❌       |
+| Unifi Devices    	| Adopt Devices                        	|❌ Not working |
 | Unifi Devices    	| Execute Port Action                  	|      ❌       |
 | Unifi Devices    	| Execute Adopted Device Action        	|      ❌       |
 | Unifi Devices    	| Get Adopted Device Details           	|      ✅       |
@@ -63,7 +63,7 @@ This module is not an official module from Ubiquiti Inc.
 
 I only have access to limited Unifi hardware so not all endpoints can be implemented or tested.
 
-I'm learning Terraform and will try to improve the modules over time. (I'm looking over `terraform query` and `terraform test`).
+I'm learning Terraform and will try to improve the modules over time. (I'm looking over `terraform query`, `terraform test` and maybe one time on a terraform provider).
 
 Contributions are welcome but any AI generated PR will be rejected.
 

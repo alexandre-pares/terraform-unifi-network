@@ -1,12 +1,15 @@
 output "adopted_devices" {
   description = <<DESCRIPTION
   ## Description
+
   List of adopted devices on a site managed by the Unifi Network Application.
 
   ## Learn more
+
   https://developer.ui.com/network/v10.1.68/getsiteoverviewpage
 
   ## Example
+
   ```hcl
   {
     "offset"      = 0
@@ -55,7 +58,6 @@ output "adopted_devices" {
   ```
 
   DESCRIPTION
-
 
   value = data.restful_resource.adopted_devices.output
 }

@@ -42,5 +42,5 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_application_info"></a> [application\_info](#output\_application\_info) | ## Description<br/>  Unifi Application Information.<br/><br/>  ## Learn more<br/>  https://developer.ui.com/network/v10.1.68/getinfo<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "applicationVersion" = "10.1.68"<br/>  }</pre> |
+| <a name="output_application_info"></a> [application\_info](#output\_application\_info) | ## Description<br/><br/>  Unifi Application Information.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getinfo<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "applicationVersion" = "10.1.68"<br/>  }</pre> |
 <!-- END_TF_DOCS -->

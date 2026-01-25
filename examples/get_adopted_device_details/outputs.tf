@@ -9,6 +9,7 @@ output "adopted_device_details" {
   https://developer.ui.com/network/v10.1.68/getadopteddevicedetails
 
   ## Example
+
   ```hcl
   {
     "id"                = "c94dadd5-4368-3273-bf77-d45d2e9e0cc1"
