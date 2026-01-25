@@ -4,7 +4,7 @@ This module is used to retrieve informations about your Unifi Network applicatio
 
 ## Examples
 
-- [Get Application Info](../../examples/get_application_info/README.md)
+- [Get Application Info](../../examples/get_application_info)
 
 ## Limitations
 

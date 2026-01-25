@@ -4,7 +4,7 @@ This module return device statistics for an adopted device linked to a sites man
 
 ## Examples
 
-- [Get Adopted Device Statistics (Ephemeral)](../../examples/get_adopted_device_statistics_ephemeral/README.md)
+- [Get Adopted Device Statistics (Ephemeral)](../../examples/get_adopted_device_statistics_ephemeral)
 
 ## Limitations
 

@@ -4,7 +4,7 @@ This module list adopted devices for a site managed by your Unifi Network applic
 
 ## Examples
 
-- [List Adopted Devices](../../examples/list_adopted_devices/README.md)
+- [List Adopted Devices](../../examples/list_adopted_devices)
 
 ## Limitations
 

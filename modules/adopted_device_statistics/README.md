@@ -4,7 +4,7 @@ This module return device statistics for an adopted device linked to a sites man
 
 ## Examples
 
-- [Get Adopted Device Statistics](../../examples/get_adopted_device_statistics/README.md)
+- [Get Adopted Device Statistics](../../examples/get_adopted_device_statistics)
 
 ## Limitations
 

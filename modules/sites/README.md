@@ -4,7 +4,7 @@ This module list sites managed by your Unifi Network application.
 
 ## Examples
 
-- [List Local Sites](../../examples/list_local_sites/README.md)
+- [List Local Sites](../../examples/list_local_sites)
 
 ## Limitations
 

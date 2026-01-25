@@ -4,7 +4,7 @@ This module return details about an adopted device linked to a sites managed by 
 
 ## Examples
 
-- [get_adopted_device_details](../../examples/get_adopted_device_details/README.md)
+- [get_adopted_device_details](../../examples/get_adopted_device_details)
 
 ## Limitations
 
