@@ -8,9 +8,7 @@ This module return device statistics for an adopted device linked to a sites man
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
