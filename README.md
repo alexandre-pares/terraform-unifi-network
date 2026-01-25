@@ -35,6 +35,9 @@ This module catalogue tries to cover the Unifi endpoints as much as possible.
 | Networks         	| List Networks                        	|      ❌       |
 | Networks         	| Create Network                       	|      ❌       |
 | Networks         	| Get Network References               	|      ❌       |
+| N/A             	| Get Generic API endpoint             	|      ✅       |
+
+The last row "Get Generic API endpoint" reference the [`./modules/generic_get_client`](./modules/generic_get_client) submodule and can be used to query (Get only) any Unifi Network API endpoint that is not yet implemented in this module.
 
 ## Common Issues
 
@@ -58,6 +61,24 @@ This can happen when you are using the `local` API endpoint because your Unifi C
 To fix this issue you can either:
 - Verify that your `magodo/restful` provider has the `tls_insecure_skip_verify` parameter set to `true` when using a local endpoint (See [`./examples/get_application_info/terraform.tf`](./examples/get_application_info/terraform.tf#L24))
 - Add a trusted certificate to your Unifi Console (Settings > Console Plane > Certificates > Add new)
+
+
+### i/o timeout
+
+```bash
+╷
+│ Error: Error to call Read
+│
+│   with module.sites.data.restful_resource.sites,
+│   on ../../modules/sites/main.tf line 1, in data "restful_resource" "sites":
+│    1: data "restful_resource" "sites" {
+│
+│ Get "https://192.168.1.1/proxy/network/integration/v1/sites": dial tcp 192.168.1.1:443: i/o timeout
+╵
+```
+
+This can happen when using WSL2 on Windows after a long day of development. Simply restart your linux distro to fix it.
+
 
 ## Disclaimer
 
