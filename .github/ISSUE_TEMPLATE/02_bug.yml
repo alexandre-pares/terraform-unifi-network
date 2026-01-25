@@ -1,0 +1,49 @@
+name: Report a bug
+description: Have you found a bug or issue? Create a bug report for this module (or submodules).
+labels: ["bug"]
+
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for similar issue and I haven't found a suitable solution or answer.
+          required: true
+        - label: I'm able to reproduce this issue consistently.
+          required: true
+        - label: I'm using the latest version of the module.
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the issue, including what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Detail the steps taken to reproduce this error
+      placeholder: |
+        1. Step 1...
+        2. Step 2...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional informations
+      description: Any relevant information you think would be useful.
+      placeholder: |
+        Device model: ...
+        Device firmware version: ...
+        Unifi Application version: ...
+        Terraform version: ...
+        TF Module version: ...
+    validations:
+      required: false
