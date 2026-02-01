@@ -59,36 +59,3 @@ output "network_details" {
 
   value = module.network_details.network_details
 }
-
-output "firewall_zone_details" {
-  description = <<DESCRIPTION
-  ## Description
-
-  Firewall Zone details
-
-  ## Example
-
-  ```hcl
-  {
-    id         = "854c48aa-687c-4520-b0c6-2d4dd324a0ec"
-    metadata   = {
-      configurable = true
-      origin       = "SYSTEM_DEFINED"
-    }
-    name       = "Internal"
-    networkIds = [
-      "0ea04911-db4e-4365-81df-0bfd0afe55e8",
-      "fa352a51-4acd-4b3c-aa18-a6e605aa256d",
-      "10f1fbdd-3b22-4f41-9c9c-850693199bf1",
-      "4e40e3c3-3d7d-49a3-8b81-544c3250450b",
-      "1867e15d-bb79-4475-a223-dace9967dd0c",
-      "9d7a459b-c265-444e-8629-ca681cd75fbf",
-      "dc49f925-9a7c-413e-991e-c34e1af27cae",
-    ]
-  }
-  ```
-
-  DESCRIPTION
-
-  value = module.firewall_zone_details.response
-}

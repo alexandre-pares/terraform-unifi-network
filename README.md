@@ -15,29 +15,53 @@ Checkout the [examples](./examples) folder for detailed examples.
 
 This module catalogue tries to cover the Unifi endpoints as much as possible.
 
-| **Endpoint**     	| **Feature**                          	| **Support** 	|
-|------------------	|--------------------------------------	|:-------------:|
-| Application Info 	| Get Application Info                 	|      ✅       |
-| Sites            	| List Local Sites                     	|  ⚠️ Partial  	|
-| Unifi Devices    	| List Adopted Devices                 	|  ⚠️ Partial  	|
-| Unifi Devices    	| Adopt Devices                        	|❌ Not working |
-| Unifi Devices    	| Execute Port Action                  	|      ❌       |
-| Unifi Devices    	| Execute Adopted Device Action        	|      ❌       |
-| Unifi Devices    	| Get Adopted Device Details           	|      ✅       |
-| Unifi Devices    	| Get Latest Adopted Device Statistics 	|      ✅       |
-| Unifi Devices    	| List Devices Pending Adoption        	|      ❌       |
-| Clients          	| Execute Client Action                	|      ❌       |
-| Clients          	| List Connected Clients               	|      ❌       |
-| Clients          	| Get Connected Client Details         	|      ❌       |
-| Networks         	| Get Network Details                  	|      ❌       |
-| Networks         	| Update Network                       	|      ❌       |
-| Networks         	| Delete Network                       	|      ❌       |
-| Networks         	| List Networks                        	|      ❌       |
-| Networks         	| Create Network                       	|      ❌       |
-| Networks         	| Get Network References               	|      ❌       |
-| N/A             	| Get Generic API endpoint             	|      ✅       |
+| **Endpoint**     	| **Feature**                          	    | **Support** 	|
+|------------------	|-------------------------------------------|:-------------:|
+| N/A             	| Get Generic API endpoint             	    |      ✅       |
+| Application Info 	| Get Application Info                 	    |      ✅       |
+| Sites            	| List Local Sites                     	    |  ⚠️ Partial  	|
+| Unifi Devices    	| List Adopted Devices                 	    |  ⚠️ Partial  	|
+| Unifi Devices    	| Adopt Devices                        	    |❌ Not working |
+| Unifi Devices    	| Execute Port Action                  	    |      ❌       |
+| Unifi Devices    	| Execute Adopted Device Action        	    |      ❌       |
+| Unifi Devices    	| Get Adopted Device Details           	    |      ✅       |
+| Unifi Devices    	| Get Latest Adopted Device Statistics 	    |      ✅       |
+| Unifi Devices    	| List Devices Pending Adoption        	    |      ❌       |
+| Clients          	| Execute Client Action                	    |      ❌       |
+| Clients          	| List Connected Clients               	    |      ❌       |
+| Clients          	| Get Connected Client Details         	    |      ❌       |
+| Networks         	| Get Network Details                  	    |      ✅       |
+| Networks         	| Update Network                       	    |      ✅       |
+| Networks         	| Delete Network                       	    |      ✅       |
+| Networks         	| List Networks                        	    |      ✅       |
+| Networks         	| Create Network                       	    | ⚠️ Partial    |
+| Networks         	| Get Network References               	    |      ❌       |
+| Wifi Broadcasts   | Get Wifi Broadcast Details                |      ❌       |
+| Wifi Broadcasts   | Update Wifi Broadcast                     |      ❌       |
+| Wifi Broadcasts   | Delete Wifi Broadcast                     |      ❌       |
+| Wifi Broadcasts   | List Wifi Broadcast                       |      ❌       |
+| Wifi Broadcasts   | Create Wifi Broadcast                     |      ❌       |
+| Hotspot           | List Vouchers                             |      ❌       |
+| Hotspot           | Generate Vouchers                         |      ❌       |
+| Hotspot           | Delete Vouchers                           |      ❌       |
+| Hotspot           | Get Voucher Details                       |      ❌       |
+| Hotspot           | Delete Voucher                            |      ❌       |
+| Firewall          | Get Firewall Zone                         |      ❌       |
+| Firewall          | Update Firewall Zone                      |      ❌       |
+| Firewall          | Delete Cutom Firewall Zone                |      ❌       |
+| Firewall          | Get Firewall Policy                       |      ❌       |
+| Firewall          | Update Firewall Policy                    |      ❌       |
+| Firewall          | Delete Firewall Policy                    |      ❌       |
+| Firewall          | Patch Firewall Policy                     |      ❌       |
+| Firewall          | Get User-Defined Firewall Policy Ordering |      ❌       |
+| Firewall          | Reorder User-Defined Firewall Policies    |      ❌       |
+| Firewall          | List Firewall Zones                       |      ✅       |
+| Firewall          | Create Custom Firewall Zone               |      ❌       |
+| Firewall          | List Firewall Policies                    |      ❌       |
+| Firewall          | Create Firewall Policy                    |      ❌       |
 
-The last row "Get Generic API endpoint" reference the [`./modules/generic_get_client`](./modules/generic_get_client) submodule and can be used to query (Get only) any Unifi Network API endpoint that is not yet implemented in this module.
+
+The first row "Get Generic API endpoint" reference the [`./modules/generic_get_client`](./modules/generic_get_client) submodule and can be used to query (Get only) any Unifi Network API endpoint that is not yet implemented in this module.
 
 ## Common Issues
 
@@ -92,6 +116,7 @@ I'm learning Terraform and will try to improve the modules over time. (I'm looki
 
 - [terraform-ibm-modules/common-dev-assets](https://github.com/terraform-ibm-modules/common-dev-assets/blob/main/module-assets/.pre-commit-config.yaml) for pre-commits
 - [Azure/terraform-azurerm-avm-template](https://github.com/Azure/terraform-azurerm-avm-template/blob/main/outputs.tf) for TF variables and outputs descriptions format
+- [Azure/terraform-azurerm-lz-vending](https://github.com/Azure/terraform-azurerm-lz-vending/blob/ddc6b5989a01e658250b998285c8dccb7b3afa30/docs/wiki/Example-3-YAML-data-files.md?plain=1#L31)
 
 
 <!-- BEGIN_TF_DOCS -->

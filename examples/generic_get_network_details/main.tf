@@ -21,3 +21,9 @@ module "network_details" {
   site_id    = module.sites.sites["data"][0]["id"]
   network_id = module.networks.response["data"][0]["id"]
 }
+
+module "firewall_zone_details" {
+  source = "../../modules/generic_get_client"
+
+  path = "/v1/sites/${module.sites.sites["data"][0]["id"]}/firewall/zones/${module.network_details.network_details.zoneId}"
+}

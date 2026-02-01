@@ -43,7 +43,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_path"></a> [path](#input\_path) | ## Description<br/><br/>  API endpoint path.<br/><br/>  ## Example<br/><br/>  `/v1/sites/5f7d3a2e4c6b3a00123abcd4/networks/1a25e9d4-8864-49d5-abc4-fffc47905326/references`<br/><br/>  ## How to get API endpoint path<br/><br/>  Navigate the Official Unifi Network API documentation and search for the correspondig endpoint path.<br/><br/>  - https://unifi.ui.com/settings/api-docs<br/>  - https://192.168.1.1/unifi-api/network (Assuming 192.168.1.1 is your Unifi Console IP) | `string` | n/a | yes |
-| <a name="input_query_parameters"></a> [query\_parameters](#input\_query\_parameters) | ## Description<br/><br/>  Query parameters to be sent with the API request.<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    offset = 10<br/>    limit  = 20<br/>    filter = "metadata.origin.eq('SYSTEM_DEFINED')"<br/>  }</pre> | `map(string)` | `null` | no |
+| <a name="input_query_parameters"></a> [query\_parameters](#input\_query\_parameters) | ## Description<br/><br/>  Query parameters to be sent with the API request.<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    offset = 10<br/>    limit  = 20<br/>    filter = "metadata.origin.eq('SYSTEM_DEFINED')"<br/>  }</pre> | `map(string)` | `{}` | no |
 
 ## Outputs
 

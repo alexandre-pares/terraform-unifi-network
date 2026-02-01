@@ -1,7 +1,6 @@
 name: Report a bug
 description: Have you found a bug or issue? Create a bug report for this module (or submodules).
 labels: ["bug"]
-
 body:
   - type: checkboxes
     id: checklist
@@ -21,7 +20,6 @@ body:
       description: A clear description of the issue, including what you expected to happen.
     validations:
       required: true
-
   - type: textarea
     id: reproduction
     attributes:
@@ -33,7 +31,6 @@ body:
         3. ...
     validations:
       required: true
-
   - type: textarea
     id: additional-info
     attributes:
