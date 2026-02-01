@@ -1,8 +1,6 @@
-# Example: Get Network Details using the Generic Unifi Get API Client Terraform Module
+# Example: Create Networks
 
-Get details about a specific network of a specific site.
-
-This will produce the same result as the [Get Network Details Example](../get_network_details/) and relies on the [Generic Unifi Get API Client Terraform Module](../../modules/generic_get_client) to perform the API request over Unifi Networks.
+Create multiple networks in a Unifi site.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -20,9 +18,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_firewall_zone_details"></a> [firewall\_zone\_details](#module\_firewall\_zone\_details) | ../../modules/generic_get_client | n/a |
-| <a name="module_network_details"></a> [network\_details](#module\_network\_details) | ../../modules/network_details | n/a |
-| <a name="module_networks"></a> [networks](#module\_networks) | ../../modules/generic_get_client | n/a |
+| <a name="module_network"></a> [network](#module\_network) | ../../modules/network | n/a |
 | <a name="module_sites"></a> [sites](#module\_sites) | ../../modules/sites | n/a |
 
 ## Resources
@@ -42,6 +38,5 @@ No resources.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_firewall_zone_details"></a> [firewall\_zone\_details](#output\_firewall\_zone\_details) | ## Description<br/><br/>  Firewall Zone details<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    id         = "854c48aa-687c-4520-b0c6-2d4dd324a0ec"<br/>    metadata   = {<br/>      configurable = true<br/>      origin       = "SYSTEM_DEFINED"<br/>    }<br/>    name       = "Internal"<br/>    networkIds = [<br/>      "0ea04911-db4e-4365-81df-0bfd0afe55e8",<br/>      "fa352a51-4acd-4b3c-aa18-a6e605aa256d",<br/>      "10f1fbdd-3b22-4f41-9c9c-850693199bf1",<br/>      "4e40e3c3-3d7d-49a3-8b81-544c3250450b",<br/>      "1867e15d-bb79-4475-a223-dace9967dd0c",<br/>      "9d7a459b-c265-444e-8629-ca681cd75fbf",<br/>      "dc49f925-9a7c-413e-991e-c34e1af27cae",<br/>    ]<br/>  }</pre> |
-| <a name="output_network_details"></a> [network\_details](#output\_network\_details) | ## Description<br/><br/>  Details about a network.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getnetworkdetails<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    cellularBackupEnabled = false<br/>    default               = true<br/>    enabled               = true<br/>    id                    = "1a25e9d4-8864-49d5-abc4-fffc47905326"<br/>    internetAccessEnabled = true<br/>    ipv4Configuration     = {<br/>      autoScaleEnabled  = true<br/>      dhcpConfiguration = {<br/>          domainName                   = "local-domain.tld"<br/>          ipAddressRange               = {<br/>              start = "192.168.1.6"<br/>              stop  = "192.168.1.254"<br/>            }<br/>          leaseTimeSeconds             = 86400<br/>          mode                         = "SERVER"<br/>          pingConflictDetectionEnabled = true<br/>        }<br/>      hostIpAddress     = "192.168.1.1"<br/>      prefixLength      = 24<br/>    }<br/>  ipv6Configuration     = {<br/>    clientAddressAssignment        = {<br/>      slaacEnabled = true<br/>    }<br/>    interfaceType                  = "PREFIX_DELEGATION"<br/>    prefixDelegationWanInterfaceId = "d7a6a629-5696-4140-ae5f-50a29bc04061"<br/>    routerAdvertisement            = {<br/>      priority = "HIGH"<br/>    }<br/>    }<br/>    isolationEnabled      = false<br/>    management            = "GATEWAY"<br/>    mdnsForwardingEnabled = true<br/>    metadata              = {<br/>      configurable = true<br/>      origin       = "SYSTEM_DEFINED"<br/>    }<br/>    name                  = "Default"<br/>    vlanId                = 1<br/>    zoneId                = "b54d3153-7f14-4aaf-9ceb-95a5a08d5519"<br/>  }</pre> |
+| <a name="output_network_details"></a> [network\_details](#output\_network\_details) | ## Description<br/><br/>  Map of Network details.<br/><br/>  ## Learn more<br/><br/>  https://developer.ui.com/network/v10.1.68/getnetworkdetails<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    "test_network_1" => {<br/>      cellularBackupEnabled = false<br/>      default               = true<br/>      enabled               = true<br/>      id                    = "1a25e9d4-8864-49d5-abc4-fffc47905326"<br/>      internetAccessEnabled = true<br/>      ipv4Configuration     = {<br/>        autoScaleEnabled  = true<br/>        dhcpConfiguration = {<br/>            domainName                   = "local-domain.tld"<br/>            ipAddressRange               = {<br/>                start = "192.168.1.6"<br/>                stop  = "192.168.1.254"<br/>              }<br/>            leaseTimeSeconds             = 86400<br/>            mode                         = "SERVER"<br/>            pingConflictDetectionEnabled = true<br/>          }<br/>        hostIpAddress     = "192.168.1.1"<br/>        prefixLength      = 24<br/>      }<br/>    ipv6Configuration     = {<br/>      clientAddressAssignment        = {<br/>        slaacEnabled = true<br/>      }<br/>      interfaceType                  = "PREFIX_DELEGATION"<br/>      prefixDelegationWanInterfaceId = "d7a6a629-5696-4140-ae5f-50a29bc04061"<br/>      routerAdvertisement            = {<br/>        priority = "HIGH"<br/>      }<br/>      }<br/>      isolationEnabled      = false<br/>      management            = "GATEWAY"<br/>      mdnsForwardingEnabled = true<br/>      metadata              = {<br/>        configurable = true<br/>        origin       = "SYSTEM_DEFINED"<br/>      }<br/>      name                  = "Default"<br/>      vlanId                = 1<br/>      zoneId                = "b54d3153-7f14-4aaf-9ceb-95a5a08d5519"<br/>    }<br/>  }</pre> |
 <!-- END_TF_DOCS -->

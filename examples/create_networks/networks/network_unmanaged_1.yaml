@@ -1,0 +1,4 @@
+# Unmanaged Network 01
+name: "Test Unmanaged Network (01)"
+management_type: "UNMANAGED"
+vlan_id: 4

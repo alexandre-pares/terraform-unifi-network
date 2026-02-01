@@ -40,6 +40,6 @@ variable "query_parameters" {
   DESCRIPTION
 
   type     = map(string)
-  nullable = true
-  default  = null
+  nullable = false
+  default  = {}
 }

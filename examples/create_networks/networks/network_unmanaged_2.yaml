@@ -1,0 +1,7 @@
+# Unmanaged Network 02
+name: "Test Unmanaged Network (02)"
+management_type: "UNMANAGED"
+vlan_id: 5
+dhcp_guarding:
+  trusted_dhcp_server_ip_addresses:
+    - "192.168.1.1"

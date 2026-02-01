@@ -1,0 +1,32 @@
+# Gateway 3
+name: "Test Gateway Network (03)"
+management_type: "GATEWAY"
+vlan_id: 9
+enable_cellular_backup: false
+enable_mdns_forwarding: false
+enable_isolation: true
+enable_internet_access: false
+ipv4_configuration:
+  enable_auto_scale: true
+  host_ip_address: "192.168.9.1"
+  prefix_length: 24
+  additional_host_ip_subnets: ["10.0.11.1/24"]
+  dhcp_configuration:
+    mode: "SERVER"
+    ip_address_range:
+      start: "192.168.9.5"
+      stop: "192.168.9.40"
+    override_dns_server_ip_addresses:
+      - "1.1.1.1" # Cloudflare
+      - "1.0.0.1" # Cloudflare
+      - "8.8.8.8" # Google
+      - "8.8.4.4" # Google
+    lease_time_seconds: 28880 # 12 hours
+    domain_name: "homelab.onpremise.example.com"
+    enable_ping_conflict_detection: false
+    ntp_server_ip_addresses:
+      # Non-smear servers
+      - "162.159.200.1" # Cloudflare (time.cloudflare.com) https://www.ntppool.org/scores/162.159.200.1
+      - "162.159.200.123" # Cloudflare (time.cloudflare.com) https://www.ntppool.org/scores/162.159.200.123
+    time_offset_seconds: 3600 # UTC+1 Central European Time (CET)
+firewall_zone_id: "854c48aa-687c-4520-b0c6-2d4dd324a0ec"

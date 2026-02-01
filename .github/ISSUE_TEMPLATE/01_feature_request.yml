@@ -1,7 +1,6 @@
 name: Feature Request
 description: A new idea for this module (or submodules)?
 labels: ["feature-request"]
-
 body:
   - type: checkboxes
     id: checklist
@@ -10,7 +9,6 @@ body:
       options:
         - label: I have searched for similar feature request and I haven't found a match.
           required: true
-
   - type: textarea
     id: description
     attributes:
@@ -27,7 +25,6 @@ body:
         Describe any current workarounds (or hack).
     validations:
       required: true
-
   - type: textarea
     id: additional-info
     attributes:
