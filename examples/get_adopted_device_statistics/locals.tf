@@ -8,4 +8,6 @@ locals {
     # This is the prefered method if you have a direct connection to your Unifi Console
     local = "https://${var.console_ip}/proxy/network/integration"
   }
+
+  site_id = module.sites.sites["data"][0]["id"]
 }

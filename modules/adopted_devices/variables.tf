@@ -17,3 +17,30 @@ variable "site_id" {
   type     = string
   nullable = false
 }
+
+variable "query_parameters" {
+  description = <<DESCRIPTION
+  ## Description
+
+  Query parameters to be sent with the API request.
+
+  ## Example
+
+  ```hcl
+  {
+    offset = 10
+    limit  = 20
+    filter = "features.contains('accessPoint')"
+  }
+  ```
+
+  DESCRIPTION
+
+  type = object({
+    offset = optional(number)
+    limit  = optional(number)
+    filter = optional(string)
+  })
+  nullable = false
+  default  = {}
+}

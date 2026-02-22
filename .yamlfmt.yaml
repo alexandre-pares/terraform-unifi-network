@@ -1,0 +1,5 @@
+---
+formatter:
+  include_document_start: true
+  line_ending: "lf"
+  eof_newline: true

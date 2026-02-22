@@ -1,0 +1,13 @@
+---
+# Management Network
+name: "Management Network"
+management_type: "GATEWAY"
+vlan_id: 100
+enable_cellular_backup: false
+enable_mdns_forwarding: false
+enable_isolation: false
+enable_internet_access: false
+ipv4_configuration:
+  enable_auto_scale: true
+  host_ip_address: "172.16.100.1"
+  prefix_length: 24
