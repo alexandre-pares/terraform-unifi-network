@@ -4,13 +4,11 @@ This module return details about an adopted device linked to a sites managed by 
 
 ## Examples
 
-- [get_adopted_device_details](../../examples/get_adopted_device_details)
+- [Get Adopted Device Details](../../examples/get_adopted_device_details)
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

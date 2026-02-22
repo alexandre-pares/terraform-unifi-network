@@ -1,16 +1,14 @@
-# Devices Pending Adoption Terraform Module
+# Adopt Device Terraform Module
 
-This module list devices pending adoption for an Unifi Network application.
+This module adopts devices pending adoption for an Unifi Network application.
 
 ## Examples
 
-- [List Devices Pending Adoption](../../examples/list_devices_pending_adoption)
+- [Adopt Device](../../examples/adopt_device)
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

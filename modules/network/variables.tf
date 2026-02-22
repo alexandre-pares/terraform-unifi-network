@@ -22,17 +22,17 @@ variable "management_type" {
   description = <<DESCRIPTION
   ## Description
 
+  Type of management.
 
+  ## Possible values
+
+  - `GATEWAY`   Network managed by the main Unifi gateway
+  - `UNMANAGED` Network managed by a 3rd party gateway
+  - `SWITCH`    Network managed by a Unifi L3 switch
 
   ## Default
 
   `GATEWAY`
-
-  ## Possible values
-
-  - `GATEWAY`
-  - `UNMANAGED`
-  - `SWITCH`
 
   DESCRIPTION
 
@@ -111,7 +111,7 @@ variable "dhcp_guarding" {
   ## Format
 
   ```hcl
-    # List of trusted DHCP server IP addresses.
+  # List of trusted DHCP server IP addresses.
   {
     trusted_dhcp_server_ip_addresses = list(string)
   }
@@ -122,16 +122,20 @@ variable "dhcp_guarding" {
   ### Disable DHCP Guarding
 
   ```hcl
-  dhcp_guarding = null
+  null
   ```
 
   ### Enabled DHCP Guarding
 
   ```hcl
-  dhcp_guarding = {
+  {
     trusted_dhcp_server_ip_addresses = ["192.168.1.1"]
   }
   ```
+
+  ## Default
+
+  `null`
 
   DESCRIPTION
 
@@ -154,7 +158,7 @@ variable "enable_isolation" {
 
   ## Default
 
-  null
+  `null`
 
   DESCRIPTION
 
@@ -175,7 +179,7 @@ variable "enable_cellular_backup" {
 
   ## Default
 
-  null
+  `null`
 
   DESCRIPTION
 
@@ -194,6 +198,10 @@ variable "firewall_zone_id" {
 
   `c149df49-8155-4dd2-a7c6-c69609d508f0`
 
+  ## Default
+
+  `null`
+
   DESCRIPTION
 
   type     = string
@@ -210,6 +218,10 @@ variable "enable_internet_access" {
   ## Example
 
   `true`
+
+  ## Default
+
+  `null`
 
   DESCRIPTION
 
@@ -228,6 +240,10 @@ variable "enable_mdns_forwarding" {
 
   `true`
 
+  ## Default
+
+  `null`
+
   DESCRIPTION
 
   type     = bool
@@ -244,8 +260,21 @@ variable "ipv4_configuration" {
   ## Example
 
   ```hcl
+  {
+    enable_auto_scale = true
+    host_ip_address   = "192.168.11.1"
+    prefix_length     = 24
 
+    dhcp_configuration = {
+      mode                     = "RELAY"
+      dhcp_server_ip_addresses = ["192.168.9.1"]
+    }
+  }
   ```
+
+  ## Default
+
+  `null`
 
   DESCRIPTION
 
@@ -335,6 +364,7 @@ variable "ipv4_configuration" {
       # AUTO or STATIC
       type = string
 
+      # WAN interface IP
       wan_interface_ip = string
 
       # IP address selection mode which determines how the IP address will be selected
@@ -363,7 +393,6 @@ variable "ipv4_configuration" {
 
 
 # IPv6 Configuration
-# Todo
 variable "ipv6_configuration" {
   description = <<DESCRIPTION
   ## Description
@@ -393,6 +422,14 @@ variable "ipv6_configuration" {
   ```
 
   ### Static with DHCPv6
+
+  ```hcl
+
+  ```
+
+  ## Default
+
+  `null`
 
   DESCRIPTION
 
@@ -462,6 +499,10 @@ variable "device_id" {
   ## Examples
 
   `3311ddbc-5e5a-45c7-8e5a-699c378e14a4`
+
+  ## Default
+
+  `null`
 
   DESCRIPTION
 

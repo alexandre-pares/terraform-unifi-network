@@ -8,9 +8,7 @@ This module list sites managed by your Unifi Network application.
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -38,7 +36,9 @@ No modules.
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_query_parameters"></a> [query\_parameters](#input\_query\_parameters) | ## Description<br/><br/>  Query parameters to be sent with the API request.<br/><br/>  ## Example<pre>hcl<br/>  {<br/>    offset = 10<br/>    limit  = 20<br/>    filter = "metadata.origin.eq('USER_DEFINED')"<br/>  }</pre> | <pre>object({<br/>    offset = optional(number)<br/>    limit  = optional(number)<br/>    filter = optional(string)<br/>  })</pre> | `{}` | no |
 
 ## Outputs
 

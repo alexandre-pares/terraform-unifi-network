@@ -8,9 +8,7 @@ This module return details about a network linked to a sites managed by your Uni
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

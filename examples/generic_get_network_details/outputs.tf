@@ -64,26 +64,27 @@ output "firewall_zone_details" {
   description = <<DESCRIPTION
   ## Description
 
-  Firewall Zone details
+  Details about a firewall zone.
+
+  ## Learn more
+
+  https://developer.ui.com/network/v10.1.84/getfirewallzone
 
   ## Example
 
   ```hcl
   {
-    id         = "854c48aa-687c-4520-b0c6-2d4dd324a0ec"
+    id         = "5aa9437d-7d50-425f-bfaf-d3d6bd487a87"
     metadata   = {
-      configurable = true
+      configurable = false
       origin       = "SYSTEM_DEFINED"
     }
-    name       = "Internal"
+    name       = "Vpn"
     networkIds = [
-      "0ea04911-db4e-4365-81df-0bfd0afe55e8",
-      "fa352a51-4acd-4b3c-aa18-a6e605aa256d",
-      "10f1fbdd-3b22-4f41-9c9c-850693199bf1",
-      "4e40e3c3-3d7d-49a3-8b81-544c3250450b",
-      "1867e15d-bb79-4475-a223-dace9967dd0c",
-      "9d7a459b-c265-444e-8629-ca681cd75fbf",
-      "dc49f925-9a7c-413e-991e-c34e1af27cae",
+      "3cacfc0f-e5a0-4958-adb9-901e6a090a92",
+      "ccf067c6-fb2c-4a24-b9b2-f209b489a0f7",
+      "c43cbc22-fa89-493e-b38f-9e4a720b9bb3",
+      "a4df7e6d-09dd-4476-8311-1f0298b00831",
     ]
   }
   ```

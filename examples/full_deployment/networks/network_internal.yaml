@@ -1,0 +1,13 @@
+---
+# Internal Network
+name: "Internal Network"
+management_type: "GATEWAY"
+vlan_id: 10
+enable_cellular_backup: true
+enable_mdns_forwarding: true
+enable_isolation: false
+enable_internet_access: true
+ipv4_configuration:
+  enable_auto_scale: true
+  host_ip_address: "10.0.100.1"
+  prefix_length: 24

@@ -8,9 +8,7 @@ This module list Firewall Zones managed by your Unifi Network application.
 
 ## Limitations
 
-- `offset` not supported
-- `limit` not supported
-- `filter` not supported
+N/A
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
