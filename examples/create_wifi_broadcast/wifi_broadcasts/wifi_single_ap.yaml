@@ -1,0 +1,30 @@
+---
+type: STANDARD
+name: "Test single AP SSID"
+network:
+  type: NATIVE
+enabled: false
+security_configuration:
+  type: WPA3_PERSONAL
+  group_rekey_interval_seconds: 3600
+  enable_fast_roaming: true
+  passphrase: Capricorn6-Broiling2-Kitchen4-Rockstar0-Module5
+  sae_configuration:
+    anticlogging_threshold_seconds: 5
+    sync_time_seconds: 5
+broadcasting_device_filter:
+  type: DEVICES
+  device_ids:
+    - 90d7096b-9e49-3065-8419-af11dcc53143
+multicast_filtering_policy:
+  action: ALLOW
+  source_mac_address_filter:
+    - d8:eb:46:ff:ff:ff # Google Chromecast
+    - ac:67:84:ff:ff:ff # Google Nest Audio
+    - 14:c1:4e:ff:ff:ff # Google Chromecast Audio
+enable_arp_proxy: true
+broadcasting_frequencies_ghz:
+  - 2.4
+  - 5
+enable_bss_transition: false
+advertise_device_name: false

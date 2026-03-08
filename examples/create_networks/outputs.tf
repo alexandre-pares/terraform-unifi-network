@@ -12,7 +12,7 @@ output "network_details" {
 
   ```hcl
   {
-    "test_network_1" => {
+    "test_network_1" = {
       cellularBackupEnabled = false
       default               = true
       enabled               = true

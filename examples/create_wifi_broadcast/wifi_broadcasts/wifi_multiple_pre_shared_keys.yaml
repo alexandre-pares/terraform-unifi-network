@@ -1,0 +1,16 @@
+---
+type: IOT_OPTIMIZED
+name: iot_wlan0
+enabled: false
+security_configuration:
+  type: WPA2_PERSONAL
+  pre_shared_keys:
+    - network:
+        type: NATIVE
+      passphrase: "unique_key_for_iot_devices_1"
+    - network:
+        type: NATIVE
+      passphrase: "unique_key_for_iot_devices_2"
+enable_multicast_to_unicast_conversion: true
+enable_client_isolation: true
+enable_uapsd: false
