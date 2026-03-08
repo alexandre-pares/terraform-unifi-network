@@ -298,7 +298,7 @@ variable "mdns_proxy_configuration" {
   description = <<DESCRIPTION
   ## Description
 
-  mDNS filtering configuration
+  mDNS filtering configuration.
 
   - `mode` - mDNS proxy mode. Possible values are `AUTO` and `CUSTOM`.
   - `policies` - Array of mDNS proxy policies. Required if the mode is `CUSTOM`.
@@ -495,8 +495,8 @@ variable "basic_data_rate_kbps_by_frequency_ghz" {
 
   Basic data rates in Kbps by frequency in Ghz.
 
-  - `2.4` -
-  - `5` -
+  - `2.4` - List of data rates for the 2.4 Ghz band
+  - `5` - List of data rates for the 5 Ghz band
 
   ## Example
 
@@ -532,7 +532,20 @@ variable "client_filtering_policy" {
   Client connection filtering policy.
   Allow/restrict access to the WiFi network based on client device MAC addresses.
 
+  - `action` - Action to apply. Possible values are `BLOCK` and `ALLOW`.
+  - `mac_address_filter` - List of client MAC addresses.
+
   ## Example
+
+  ```hcl
+  {
+    action = "ALLOW"
+    mac_address_filter = [
+      "d8:eb:46:ff:ff:ff", # Google Chromecast
+      "ac:67:84:ff:ff:ff", # Google Nest Audio
+      "14:c1:4e:ff:ff:ff", # Google Chromecast Audio
+    ]
+  }
 
   ## Default
 
@@ -551,10 +564,16 @@ variable "client_filtering_policy" {
 
 variable "blackout_schedule_configuration" {
   description = <<DESCRIPTION
-
   ## Description
 
   Time when this WiFi is disabled.
+
+  - `days` - List of days when the WiFi is disabled
+    - `type` - Type of blackout. Possible values are `ALL_DAY` and `TIME_RANGE`.
+    - `day` - Day of the week when the WiFi is disabled. Required when `type` is `ALL_DAY``
+    - `time_ranges` - List of time ranges
+      - `start_time` - Start time in 24-hour format (HH:mm)
+      - `end_time` - End time in 24-hour format (HH:mm)
 
   ## Example
 
@@ -650,6 +669,12 @@ variable "hotspot_configuration" {
   ## Description
 
   WiFi Hotspot configuration.
+
+  - `type` - Type of WiFi hotspot. Possible values are `CAPTIVE_PORTAL` and `PASSPOINT`.
+
+  ## Note
+
+  `PASSPOINT` type is not yet supported by the Unifi Network API.
 
   ## Example
 
@@ -804,6 +829,10 @@ variable "dtim_period_by_frequency_ghz_override" {
   ## Description
 
   DTIM (Delivery Traffic Indication Message) period override by frequency in Ghz.
+
+  - `2.4` - DTIM period override for the 2.4 Ghz band
+  - `5` - DTIM period override for the 5 Ghz band
+  - `6` - DTIM period override for the 6 Ghz band (if supported by the access points)
 
   ## Example
 

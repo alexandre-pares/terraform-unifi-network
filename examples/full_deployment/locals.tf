@@ -22,6 +22,7 @@ locals {
     f => yamldecode(file("${local.network_data_dir}/${f}"))
   }
 
+
   # Map Network to default Firewall Zone
   network_to_firewall_zone = {
     "Guest Network"      = "Hotspot"
@@ -29,7 +30,7 @@ locals {
     "Internal Network"   = "Internal"
   }
 
-  # Lead Firewall Zones configs from files
+  # Load Firewall Zones configs from files
   # firewall_zones_data_dir is the directory containing the YAML files for the firewall zones.
   firewall_zones_data_dir = "${path.root}/firewall_zones"
 
@@ -45,5 +46,19 @@ locals {
   # Map of firewall zones by name
   firewall_zones_by_name = {
     for k, v in module.firewall_zones.firewall_zones["data"] : v.name => v
+  }
+
+
+  # Load Wifi configs from files
+  # wifi_data_dir is the directory containing the YAML files for the wifi.
+  wifi_data_dir = "${path.root}/wifi_broadcasts"
+
+  # wifi_files is the list of wifi YAML files to be processed
+  wifi_files = fileset(local.wifi_data_dir, "wifi_*.yaml")
+
+  # wifi_data_map is the decoded YAML data stored in a map
+  wifi_data_map = {
+    for f in local.wifi_files :
+    f => yamldecode(file("${local.wifi_data_dir}/${f}"))
   }
 }

@@ -20,4 +20,6 @@ module "unifi_config" {
   networks = { for name, data in local.network_data_map : name => merge(data, {
     firewall_zone_id = local.firewall_zones_by_name[local.network_to_firewall_zone[data.name]].id
   }) }
+
+  wifi_broadcasts = local.wifi_data_map
 }
