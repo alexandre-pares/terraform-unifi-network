@@ -19,8 +19,8 @@ This module catalogue tries to cover the Unifi endpoints as much as possible.
 |----------------------------|-------------------------------------------|:-------------:|
 | N/A             	         | Get Generic API endpoint             	   |      ✅       |
 | Application Info 	         | Get Application Info                 	   |      ✅       |
-| Sites            	         | List Local Sites                     	   |  ⚠️ Partial   |
-| Unifi Devices    	         | List Adopted Devices                 	   |  ⚠️ Partial   |
+| Sites            	         | List Local Sites                     	   |      ✅       |
+| Sites            	         | List Local Sites                     	   |      ✅       |
 | Unifi Devices    	         | Adopt Devices                        	   |❌ Not working |
 | Unifi Devices    	         | Execute Port Action                  	   |      ❌       |
 | Unifi Devices    	         | Execute Adopted Device Action        	   |      ❌       |
@@ -28,19 +28,19 @@ This module catalogue tries to cover the Unifi endpoints as much as possible.
 | Unifi Devices    	         | Get Latest Adopted Device Statistics 	   |      ✅       |
 | Unifi Devices    	         | List Devices Pending Adoption        	   |      ✅       |
 | Clients          	         | Execute Client Action                	   |      ❌       |
-| Clients          	         | List Connected Clients               	   |      ❌       |
-| Clients          	         | Get Connected Client Details         	   |      ❌       |
+| Clients          	         | List Connected Clients               	   |      ✅       |
+| Clients          	         | Get Connected Client Details         	   |      ✅       |
 | Networks         	         | Get Network Details                  	   |      ✅       |
 | Networks         	         | Update Network                       	   |      ✅       |
 | Networks         	         | Delete Network                       	   |      ✅       |
 | Networks         	         | List Networks                        	   |      ✅       |
 | Networks         	         | Create Network                       	   | ⚠️ Partial    |
-| Networks         	         | Get Network References               	   |      ❌       |
-| Wifi Broadcasts            | Get Wifi Broadcast Details                |      ❌       |
-| Wifi Broadcasts            | Update Wifi Broadcast                     |      ❌       |
-| Wifi Broadcasts            | Delete Wifi Broadcast                     |      ❌       |
-| Wifi Broadcasts            | List Wifi Broadcast                       |      ❌       |
-| Wifi Broadcasts            | Create Wifi Broadcast                     |      ❌       |
+| Networks         	         | Get Network References               	   |      ✅       |
+| Wifi Broadcasts            | Get Wifi Broadcast Details                |      ✅       |
+| Wifi Broadcasts            | Update Wifi Broadcast                     |      ✅       |
+| Wifi Broadcasts            | Delete Wifi Broadcast                     |      ✅       |
+| Wifi Broadcasts            | List Wifi Broadcast                       |      ✅       |
+| Wifi Broadcasts            | Create Wifi Broadcast                     |      ✅       |
 | Hotspot                    | List Vouchers                             |      ❌       |
 | Hotspot                    | Generate Vouchers                         |      ❌       |
 | Hotspot                    | Delete Vouchers                           |      ❌       |
@@ -127,6 +127,34 @@ To fix this issue you can either:
 
 This can happen when using WSL2 on Windows after a long day of development. Simply restart your linux distro to fix it.
 
+### api.unexpected-error
+
+```bash
+╷
+│ Error: Create API returns 500
+│
+│   with module.network.restful_resource.network,
+│   on ..\..\modules\network\main.tf line 1, in resource "restful_resource" "network":
+│    1: resource "restful_resource" "network" {
+│
+│ {"statusCode":500,"statusName":"INTERNAL_SERVER_ERROR","code":"api.unexpected-error","message":"Unexpected
+│ error","timestamp":"2026-03-07T12:57:20.718469661Z","requestPath":"/integration/v1/sites/aff94e4d-ee24-3933-a31b-6d133aeb9856/networks","requestId":"87c3ebef-6d7f-4f25-90b7-fd0a44cf5bc0"}
+╵
+```
+
+This can happen when the Unifi Network Application is not up to date.
+
+![Unifi Application not up-to-date](./assets/unifi_network_update_available.png)
+
+Please check via Settings > Console Plane > Updates and check both "Unifi OS" and "Network Application" updates.
+
+Please also note the minimum API version supported in the module's README. Sometimes this can be an early access version. If this is the case you must first enable this option in your UI account ([Account Settings](https://account.ui.com) > Enable `Early Access`) and then change the release channel to "Early Access" in your Unifi Console Plane.
+
+![Update Unifi Application to Early Access](./assets/unifi_network_early_access_update.png)
+
+If you are using the latest version and still have an error, please [open issue](https://github.com/alexandre-pares/terraform-unifi-network/issues/new/choose).
+
+Additionally, this error can happen when using incompatible arguments (e.g. Try to create a network associated to the `Hotspot` firewall zone with `enable_isolation` enabled - `enable_isolation` must be disabled). Therefore, please check the API documentation and/or try to create manually the same resource via the (local/remote) UI of your Unifi Console.
 
 ## Disclaimer
 
@@ -134,7 +162,7 @@ This module is not an official module from Ubiquiti Inc.
 
 I only have access to limited Unifi hardware so not all endpoints can be implemented or tested.
 
-I'm learning Terraform and will try to improve the modules over time. (I'm looking over `terraform query`, `terraform test` and maybe one time on a terraform provider).
+I'm learning Terraform and will try to improve the modules over time. (I'm looking over [`terraform query`](https://developer.hashicorp.com/terraform/cli/commands/query), [`terraform test`](https://developer.hashicorp.com/terraform/cli/commands/test) and maybe one day on a terraform provider).
 
 ## Inspiration
 

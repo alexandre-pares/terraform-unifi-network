@@ -1,0 +1,33 @@
+---
+type: STANDARD
+name: Orion Passpoint (Hotspot 2.0)
+network:
+  type: NATIVE
+enabled: false
+security_configuration:
+  type: WPA3_ENTERPRISE
+  group_rekey_interval_seconds: 3600
+  enable_fast_roaming: true
+  radius_configuration:
+    profile_id: e80aeb3e-f5b5-41fc-8254-f1b5a6cc81b5
+    nas_id:
+      type: USER_DEFINED
+      value: "deployed_with_tf"
+  enable_coa: false
+  security_mode: DEFAULT
+multicast_filtering_policy:
+  action: BLOCK
+enable_multicast_to_unicast_conversion: false
+enable_client_isolation: true
+enable_uapsd: false
+broadcasting_frequencies_ghz:
+  - 2.4
+  - 5
+# Network 10.2.84 doesn't support this feature
+# hotspot_configuration:
+#   type: PASSPOINT
+enable_mlo: false
+enable_band_steering: true
+enable_arp_proxy: false
+enable_bss_transition: true
+advertise_device_name: false

@@ -83,7 +83,7 @@ locals {
             } : {},
 
             # Domain name
-            (var.ipv4_configuration.dhcp_configuration.lease_time_seconds != null) ? {
+            (var.ipv4_configuration.dhcp_configuration.domain_name != null) ? {
               domainName = var.ipv4_configuration.dhcp_configuration.domain_name
             } : {},
 

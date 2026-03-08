@@ -32,18 +32,17 @@ variable "console_ip" {
   DESCRIPTION
 
   type      = string
-  nullable  = true
+  nullable  = false
   sensitive = false
-  default   = null
+  default   = ""
 
   validation {
     # Use the cidrhost built-in terraform function to validate the IP address
     # This will only work for IPv4 addresses
-    condition     = var.console_ip == null || var.console_ip == cidrhost("${var.console_ip}/32", 0)
+    condition     = var.console_ip == "" || var.console_ip == cidrhost("${var.console_ip}/32", 0)
     error_message = "This is not a valid IP address"
   }
 }
-
 
 variable "api_key" {
   description = <<DESCRIPTION
