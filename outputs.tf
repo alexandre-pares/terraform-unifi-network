@@ -130,3 +130,123 @@ output "firewall_zones" {
 
   value = module.firewall_zone
 }
+
+output "wifi_broadcasts" {
+  description = <<DESCRIPTION
+  ## Description
+
+  Map of WiFi Broadcast details.
+
+  ## Learn more
+
+  https://developer.ui.com/network/v10.1.84/getwifibroadcastdetails
+
+  ## Example
+
+  ```hcl
+  {
+    "wifi_guest" = {
+      "advertiseDeviceName" = false
+      "arpProxyEnabled" = false
+      "bandSteeringEnabled" = true
+      "broadcastingFrequenciesGHz" = [
+        2.4,
+        5,
+      ]
+      "bssTransitionEnabled" = true
+      "clientIsolationEnabled" = false
+      "enabled" = false
+      "hideName" = false
+      "id" = "ae19ae15-e8c3-4885-b17d-fd1192e1dc5d"
+      "metadata" = {
+        "origin" = "USER_DEFINED"
+      }
+      "multicastToUnicastConversionEnabled" = true
+      "name" = "Guest Wifi"
+      "network" = {
+        "networkId" = "bc070d54-165d-42a1-bbee-a8e0b7275147"
+        "type" = "SPECIFIC"
+      }
+      "securityConfiguration" = {
+        "type" = "OPEN"
+      }
+      "type" = "STANDARD"
+      "uapsdEnabled" = false
+    }
+    "wifi_orion_passpoint.yaml" = {
+      "advertiseDeviceName" = false
+      "arpProxyEnabled" = false
+      "bandSteeringEnabled" = true
+      "broadcastingFrequenciesGHz" = [
+        2.4,
+        5,
+      ]
+      "bssTransitionEnabled" = true
+      "clientIsolationEnabled" = false
+      "enabled" = false
+      "hideName" = false
+      "id" = "49703a8a-88c2-4e2c-9dd5-dbd4b29cf3bb"
+      "metadata" = {
+        "origin" = "USER_DEFINED"
+      }
+      "mloEnabled" = false
+      "multicastToUnicastConversionEnabled" = true
+      "name" = "Orion"
+      "network" = {
+        "type" = "NATIVE"
+      }
+      "securityConfiguration" = {
+        "fastRoamingEnabled" = true
+        "groupRekeyIntervalSeconds" = 3600
+        "passphrase" = "Capricorn6-Broiling2-Kitchen4-Rockstar0-Module5"
+        "saeConfiguration" = {
+          "anticloggingThresholdSeconds" = 5
+          "syncTimeSeconds" = 5
+        }
+        "type" = "WPA3_PERSONAL"
+      }
+      "type" = "STANDARD"
+      "uapsdEnabled" = false
+    }
+    "wifi_single_ap.yaml" = {
+      "advertiseDeviceName" = false
+      "arpProxyEnabled" = true
+      "bandSteeringEnabled" = true
+      "broadcastingFrequenciesGHz" = [
+        2.4,
+        5,
+      ]
+      "bssTransitionEnabled" = true
+      "clientIsolationEnabled" = false
+      "enabled" = false
+      "hideName" = false
+      "id" = "142a1e4f-e362-4e51-9655-59a1befd3056"
+      "metadata" = {
+        "origin" = "USER_DEFINED"
+      }
+      "multicastFilteringPolicy" = {
+        "action" = "ALLOW"
+        "sourceMacAddressFilter" = [
+          "14:c1:4e:ff:ff:ff",
+          "d8:eb:46:ff:ff:ff",
+          "ac:67:84:ff:ff:ff",
+        ]
+      }
+      "multicastToUnicastConversionEnabled" = true
+      "name" = "Test single AP SSID"
+      "network" = {
+        "type" = "NATIVE"
+      }
+      "securityConfiguration" = {
+        "type" = "OPEN"
+      }
+      "type" = "STANDARD"
+      "uapsdEnabled" = false
+    }
+  }
+  ```
+
+  DESCRIPTION
+
+  value = module.wifi_broadcast
+}
